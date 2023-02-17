@@ -14,5 +14,5 @@ class CustomUserAdmin(UserAdmin):
 
     
 # Register your models here.
-admin.site.register(CustomUser, CustomUserAdmin) 
-# sexy 69
+admin.site.register(CustomUser, CustomUserAdmin)
+
