@@ -74,9 +74,13 @@ TEMPLATES = [
     },
 ]
 
-############        Added Redirection url       ***************
+############        Added Redirection url       ###############
 LOGIN_REDIRECT_URL = 'home' # new
 LOGOUT_REDIRECT_URL = 'home' # new
+
+################        Email Backend       #############
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
 
 WSGI_APPLICATION = 'collaboration_app.wsgi.application'
 
