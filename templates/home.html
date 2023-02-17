@@ -2,14 +2,5 @@
 
 {% block content %}
 
-<div class="registrations">
-    {% if user.is_authenticated %}
-        Hi {{ user.username }}!.
-        <p><a href="{% url 'logout' %}">Log Out</a></p>
-    {% else %}
-        <p>You are not logged in</p>
-        <a href="{% url 'login' %}">Log In</a>
-    {% endif %}
-</div>
-
+<h1>Hello world</h1>>
 {% endblock content %}
