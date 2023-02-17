@@ -9,8 +9,10 @@ class CustomUserAdmin(UserAdmin):
     model = CustomUser
     list_display = ['username', 'first_name', 'email', 'age', 'college', 'is_staff',]
     fieldsets = UserAdmin.fieldsets + ((None, {'fields': ('age', 'college',)}),)
-    add_fieldsets = UserAdmin.add_fieldsets + ((None, {'fields': ('age', 'college',)}),)
+    add_fieldsets = UserAdmin.add_fieldsets + ((None, {'fields': ('age', 'college',)}),)
+
 
     
 # Register your models here.
-admin.site.register(CustomUser, CustomUserAdmin)
+admin.site.register(CustomUser, CustomUserAdmin) 
+# sexy 69
