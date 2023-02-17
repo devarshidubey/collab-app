@@ -1,14 +1,28 @@
 <!-- templates/base.html -->
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="utf-8">
-<title>{% block title %}Collaboration App{% endblock title %}</title>
+    <meta charset="utf-8">
+    <title>{% block title %}Collaboration App{% endblock title %}</title>
 </head>
+
 <body>
-<main>
-{% block content %}
-{% endblock content %}
-</main>
+    <div class="nav-bar">
+        {% if user.is_authenticated %}
+            Hi {{ user.username }}!.
+            <p><a href="{% url 'logout' %}">Log Out</a></p>
+        {% else %}
+            <p>You are not logged in</p>
+            <a href="{% url 'login' %}">Log In</a>
+            <a href="{% url 'signup' %}">SignUp</a>
+        {% endif %}
+    </div>
+
+    <main>
+        {% block content %}
+        {% endblock content %}
+    </main>
 </body>
+
 </html>
