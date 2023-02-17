@@ -59,7 +59,7 @@ ROOT_URLCONF = 'collaboration_app.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [str(BASE_DIR.joinpath('templates'))], # new
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -71,6 +71,10 @@ TEMPLATES = [
         },
     },
 ]
+
+############        Added Redirection url       ***************
+LOGIN_REDIRECT_URL = 'home' # new
+LOGOUT_REDIRECT_URL = 'home' # new
 
 WSGI_APPLICATION = 'collaboration_app.wsgi.application'
 
