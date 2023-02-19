@@ -1,6 +1,50 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% block content %}
 
-{% block content %}
+<div class="main-screen">
+  <!-- Cardscreen component    -->
+  <div class="cards-screen">
+    <div class="top-icons">
+      <div class="g"><img class="gic" src="grid.svg" alt="" /></div>
+      <div class="l"><img class="lic" src="list" alt="" class="lic" /></div>
+    </div>
 
-<h1>Hello world</h1>>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
+
+    <div class="container">
+      <div class="box">
+        <a href = "{% url 'events_list' %}">Events</a>
+        <a href = "{% url 'request list' %}">Collaborate</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Filters  side bar    -->
+<div class="Filters">
+  <div class="top-div-filters">
+    <!-- technologies  -->
+    <div class="tags">Tags</div>
+    <div class="labels">
+      <div class="line1">
+        <div class="ui">UI</div>
+        <div class="sql">SQL</div>
+      </div>
+      <div class="reactjs">REACT JS</div>
+    </div>
+  </div>
+
+  <!-- locations  -->
+  <div class="bottom-div-filters">
+    <div class="Select-Location">Select-Location</div>
+    <div class="cities">
+      <div class="line1">
+        <div class="ui">Pune</div>
+        <div class="sql">Mumbai</div>
+      </div>
+      <div class="reactjs">Bengaluru</div>
+    </div>
+  </div>
+</div>
 {% endblock content %}
