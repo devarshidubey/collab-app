@@ -1,0 +1,14 @@
+<!-- templates/article_detail.html -->
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="events-entry">
+<h2>{{ events.name }}</h2>
+<p>by {{ events.published_by }} | {{ events.date }}</p>
+<a href="{{ events.link }}">Link</a>
+</div>
+<p><a href="{% url 'events_edit' events.pk %}">Edit</a> |
+<a href="{% url 'events_delete' events.pk %}">Delete</a></p>
+<p>Back to <a href="{% url 'events_list' %}">All Events</a>.</p>
+
+{% endblock content %}

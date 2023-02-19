@@ -40,7 +40,10 @@ INSTALLED_APPS = [
 
     #local apps
     'accounts',
+    'events',
 ]
+
+TIME_ZONE = 'Asia/Calcutta' # new
 
 AUTH_USER_MODEL = 'accounts.CustomUser'
 
