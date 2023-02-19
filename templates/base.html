@@ -1,30 +1,45 @@
-<!-- templates/base.html -->
+{% load static %}
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <title>{% block title %}Collaboration App{% endblock title %}</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Collab</title>
+    <link href="{% static 'css/base.css' %}" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/d97b87339f.js" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
-    <div class="nav-bar">
-        {% if user.is_authenticated %}
-            Hi {{ user.username }}!.
-            <p><a href="{% url 'logout' %}">Log Out</a></p>
-            <a href="{% url 'events_list' %}">View Events</a>
-            <a href="{% url 'events_new' %}">+Add Events</a>
-        {% else %}
-            <p>You are not logged in</p>
-            <a href="{% url 'login' %}">Log In</a>
-            <a href="{% url 'signup' %}">SignUp</a>
-        {% endif %}
+    <!-- navbar div -->
+    <div class="navbar">
+        <div class="home">HOME</div>
+
+        <div class="right-bar">
+
+            <!-- add post  -->
+            {% block post_button %}{% endblock post_button %}
+
+            <!-- Search Bar  -->
+            <div class="search-box">
+                <input class="search-input" type="text" placeholder="Search something.." />
+                <button class="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+
+            <!-- circular profile  -->
+            <div class="profile-block">
+                <a href="http://www.example.com" target="_blank"><img class="circular-img"
+                        src="https://randomuser.me/api/portraits/men/34.jpg" /><span
+                        class="circular-imag-overlay"></span></a>
+            </div>
+        </div>
     </div>
 
-    <main>
-        {% block content %}
-        {% endblock content %}
-    </main>
+    {% block content %} 
+    {% endblock content %}
 </body>
 
 </html>
