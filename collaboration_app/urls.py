@@ -8,4 +8,5 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path('requests/', include('collabapp.urls')),
     path('',TemplateView.as_view(template_name="home.html"),name='home'),
+    path('events/', include('events.urls')),
 ]

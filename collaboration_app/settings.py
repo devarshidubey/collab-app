@@ -41,7 +41,10 @@ INSTALLED_APPS = [
     #local apps
     'accounts',
     'collabapp',
+    'events',
 ]
+
+TIME_ZONE = 'Asia/Calcutta' # new
 
 AUTH_USER_MODEL = 'accounts.CustomUser'
 

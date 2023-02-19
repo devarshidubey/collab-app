@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}Articles{% endblock title %}
+{% block content %}
+
+{% for events in object_list %}
+<div class="card">
+        <h2>{{ events.name }}</h2> &middot;
+        <a href="{% url 'events_detail' events.pk%}">View</a>
+        <span>by {{ events.posted_by }} | {{ events.date }}</span>
+    <div>   
+        {{ events.body }}
+    </div>
+    <div>
+        <a href="{% url 'events_edit' events.pk %}">Edit</a> |
+        <a href="{% url 'events_delete' events.pk %}">Delete</a>
+    </div>
+</div>
+    
+<br />
+{% endfor %}
+
+{% endblock content %}
